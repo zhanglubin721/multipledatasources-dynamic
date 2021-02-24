@@ -9,4 +9,8 @@ public interface TestService {
     String testMyDataSources();
 
     String testWorkDataSources();
+
+    void testMyDataSources2();
+
+    void testWorkDataSources2();
 }

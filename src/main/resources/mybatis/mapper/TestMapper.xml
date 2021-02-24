@@ -3,8 +3,6 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zhanglubin.multipledatasourcesdynamic.mapper.TestDataSourcesMapper">
-
-
     <select id="getClientName" resultType="java.lang.String">
         select client_secret from test_client where client_id = 'yinyinShop'
     </select>
@@ -12,4 +10,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="getUsername" resultType="java.lang.String">
         select dept_id from sys_user where user_id = '4'
     </select>
+
+    <update id="updateUsername">
+        update sys_user set user_name = '1111' where user_id = 3
+    </update>
+
+    <update id="updateUsernameError">
+        update sys_user set fasfsd
+    </update>
+
+    <update id="updateClientName">
+        update test_client set client_image = '1111' where client_id = 'test2'
+    </update>
+    <update id="updateClientNameError">
+        update test_client set cfsadfsaf
+    </update>
 </mapper>

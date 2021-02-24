@@ -4,6 +4,7 @@ import com.zhanglubin.multipledatasourcesdynamic.common.annotation.TargetDataSou
 import com.zhanglubin.multipledatasourcesdynamic.mapper.TestDataSourcesMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -28,5 +29,20 @@ public class TestServiceImpl implements TestService{
         return testDataSourcesMapper.getClientName();
     }
 
+    @Override
+    @Transactional
+    @TargetDataSource(name = "datasourcemyself")
+    public void testMyDataSources2(){
+        testDataSourcesMapper.updateUsername();
+        testDataSourcesMapper.updateUsernameError();
+    }
+
+    @Override
+    @Transactional
+    @TargetDataSource(name = "datasourcework")
+    public void testWorkDataSources2(){
+        testDataSourcesMapper.updateClientName();
+        testDataSourcesMapper.updateClientNameError();
+    }
 
 }

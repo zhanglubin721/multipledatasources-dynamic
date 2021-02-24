@@ -29,4 +29,14 @@ public class TestController {
         System.out.println(s);
         return s;
     }
+
+    @RequestMapping("my2")
+    public void TestMyDataSources2() {
+        testService.testMyDataSources2();
+    }
+
+    @RequestMapping("work2")
+    public void TestWorkDataSources2() {
+        testService.testWorkDataSources2();
+    }
 }

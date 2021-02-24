@@ -12,4 +12,13 @@ public interface TestDataSourcesMapper {
     String getUsername();
 
     String getClientName();
+
+    void updateUsername();
+
+    void updateClientName();
+
+    void updateUsernameError();
+
+    void updateClientNameError();
+
 }
